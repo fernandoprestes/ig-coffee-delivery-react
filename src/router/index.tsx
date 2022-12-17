@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { HomePage } from '../pages/Home';
-import DefaultLayout from '../layouts/Default';
+import { HomePage } from '~/pages/Home';
+import { CheckoutPage } from '~/pages/Checkout';
+import DefaultLayout from '~/layouts/Default';
 
 export function Router() {
   return (
@@ -12,6 +13,10 @@ export function Router() {
         <Route
           path='/'
           element={<HomePage />}
+        />
+        <Route
+          path='/checkout'
+          element={<CheckoutPage />}
         />
       </Route>
     </Routes>

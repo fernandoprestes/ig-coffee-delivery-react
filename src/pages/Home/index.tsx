@@ -1,7 +1,10 @@
+import { Banner } from './components/Banner';
+import { HomeContainer } from './styles';
+
 export function HomePage() {
   return (
-    <main>
-      <h2>Hello World</h2>
-    </main>
+    <HomeContainer>
+      <Banner />
+    </HomeContainer>
   );
 }
