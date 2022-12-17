@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-
-import { Home } from '../pages/Home';
-import DefaultLayout from '../layouts/DefaultLayout';
+import { HomePage } from '../pages/Home';
+import DefaultLayout from '../layouts/Default';
 
 export function Router() {
   return (
@@ -12,7 +11,7 @@ export function Router() {
       >
         <Route
           path='/'
-          element={<Home />}
+          element={<HomePage />}
         />
       </Route>
     </Routes>
