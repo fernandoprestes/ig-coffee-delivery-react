@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
+import DefaultLayout from '~/layouts/Default';
+
 import { HomePage } from '~/pages/Home';
 import { CheckoutPage } from '~/pages/Checkout';
-import DefaultLayout from '~/layouts/Default';
+import { CompletedPage } from '~/pages/Completed';
 
 export function Router() {
   return (
@@ -17,6 +19,10 @@ export function Router() {
         <Route
           path='/checkout'
           element={<CheckoutPage />}
+        />
+        <Route
+          path='/completed'
+          element={<CompletedPage />}
         />
       </Route>
     </Routes>
