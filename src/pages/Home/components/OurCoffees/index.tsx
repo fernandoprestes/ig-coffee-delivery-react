@@ -15,7 +15,7 @@ export function OurCoffees() {
       <CoffeesList>
         {coffees.map(coffee => (
           <CoffeeCard
-            key={coffee.id}
+            key={`${coffee.id}${coffee.name}`}
             coffee={coffee}
           />
         ))}

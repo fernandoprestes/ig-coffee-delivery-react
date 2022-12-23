@@ -27,6 +27,7 @@ interface HeaderButtonProps {
 
 export const HeaderButton = styled.button<HeaderButtonProps>`
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
@@ -43,4 +44,20 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
       color: ${theme.colors[`brand-${variant}`]};
     }
   `}
+`;
+
+export const HeaderButtonCountCartItem = styled.div`
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  top: calc(-1.25rem / 2);
+  right: calc(-1.25rem / 2);
+  background: ${({ theme }) => theme.colors['brand-yellow-dark']};
+  color: ${({ theme }) => theme.colors['brand-yellow-light']};
 `;

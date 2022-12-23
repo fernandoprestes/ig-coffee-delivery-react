@@ -38,7 +38,9 @@ export const ActionsContainer = styled.div`
   }
 `;
 
-export const RemoveButton = styled.button`
+export const RemoveButton = styled.button.attrs({
+  type: 'button',
+})`
   display: flex;
   align-items: center;
   gap: 0.25rem;

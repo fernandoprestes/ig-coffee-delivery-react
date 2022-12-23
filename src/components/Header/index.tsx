@@ -1,9 +1,17 @@
-import { HeaderButton, HeaderButtonsContainer, HeaderContainer, HeaderContent } from './styles';
+import {
+  HeaderButton,
+  HeaderButtonCountCartItem,
+  HeaderButtonsContainer,
+  HeaderContainer,
+  HeaderContent,
+} from './styles';
 import DeliveryLogo from '~/assets/images/delivery-logo.svg';
 import { MapPin, ShoppingCart } from 'phosphor-react';
 import { NavLink } from 'react-router-dom';
+import { useCart } from '~/hooks/useCart';
 
 export function Header() {
+  const { cartQuantity } = useCart();
   return (
     <HeaderContainer>
       <HeaderContent className='container'>
@@ -27,6 +35,7 @@ export function Header() {
                 size={20}
                 weight='fill'
               />
+              <HeaderButtonCountCartItem>{cartQuantity}</HeaderButtonCountCartItem>
             </HeaderButton>
           </NavLink>
         </HeaderButtonsContainer>
