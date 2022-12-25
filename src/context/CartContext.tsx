@@ -13,6 +13,7 @@ interface CartContextType {
   addCoffeeToCart: (coffee: CartItem) => void;
   changeCartItemQuantity: (cartItemId: number, type: 'increase' | 'decrease') => void;
   removeCartItem: (cartItemId: number) => void;
+  cleanCart: () => void;
 }
 
 export const CartContext = createContext({} as CartContextType);
@@ -70,9 +71,21 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     setCartItems(newCart);
   }
 
+  function cleanCart() {
+    setCartItems([]);
+  }
+
   return (
     <CartContext.Provider
-      value={{ cartItems, cartQuantity, cartItemsTotal, addCoffeeToCart, changeCartItemQuantity, removeCartItem }}
+      value={{
+        cartItems,
+        cartQuantity,
+        cartItemsTotal,
+        addCoffeeToCart,
+        changeCartItemQuantity,
+        removeCartItem,
+        cleanCart,
+      }}
     >
       {children}
     </CartContext.Provider>

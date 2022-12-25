@@ -6,6 +6,7 @@ import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '~/hooks/useCart';
 
 enum PaymentMethods {
   credit = 'credit',
@@ -32,14 +33,16 @@ export type OrderData = zod.infer<typeof completeOrderFormValidationSchema>;
 type CompleteOrderFormData = OrderData;
 
 export function CheckoutPage() {
+  const { cleanCart } = useCart();
+  const navigate = useNavigate();
   const completeOrderForm = useForm<CompleteOrderFormData>({
     resolver: zodResolver(completeOrderFormValidationSchema),
   });
-
   const { handleSubmit } = completeOrderForm;
 
   function handleCompleteOrder(data: CompleteOrderFormData) {
-    console.log(data);
+    navigate('/completed', { state: data });
+    cleanCart();
   }
 
   return (

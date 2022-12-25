@@ -4,7 +4,7 @@ import { RegularText } from '~/styles/Typography';
 import PaymentMethodCard from '../PaymentMethodCard';
 import { PaymentMethodOptionsContainer } from './styles';
 
-const paymentMethod = {
+export const paymentMethod = {
   credit: { label: 'Cartão de crédito', icon: <CreditCard size={16} /> },
   debit: { label: 'Cartão de debito', icon: <Bank size={16} /> },
   money: { label: 'Dinheiro', icon: <Money size={16} /> },

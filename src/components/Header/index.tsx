@@ -15,10 +15,12 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderContent className='container'>
-        <img
-          src={DeliveryLogo}
-          alt='Logo Coffee Delivery'
-        />
+        <NavLink to='/'>
+          <img
+            src={DeliveryLogo}
+            alt='Logo Coffee Delivery'
+          />
+        </NavLink>
         <HeaderButtonsContainer>
           <NavLink to='/'>
             <HeaderButton variant='purple'>
