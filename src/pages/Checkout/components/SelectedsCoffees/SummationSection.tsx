@@ -39,6 +39,7 @@ export function SummationSection() {
       </div>
       <Button
         text='Confirmar pedido'
+        type='submit'
         disabled={cartQuantity < 1}
       />
     </SummationSectionContainer>
